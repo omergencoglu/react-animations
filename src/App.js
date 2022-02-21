@@ -22,8 +22,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Animations</h1>
+
         <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
-        <Backdrop show={this.state.modalIsOpen} />
+
+        {this.state.modalIsOpen ? <Backdrop show /> : null}
         <button className="Button" onClick={this.showModal}>
           Open Modal
         </button>
